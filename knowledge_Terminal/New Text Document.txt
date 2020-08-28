@@ -1,0 +1,8 @@
+pip install flask --trusted-host pypi.org --trusted-host files.pythonhosted.org
+
+
+(for window)
+python -m venv project_env(create project_env)
+project_env\Scripts\activate.bat ( to activate project_env)
+
+

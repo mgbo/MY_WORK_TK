@@ -1,0 +1,368 @@
+
+-------------------- общие команды -------------------
+------------------------------------------------------
+
+1.	cd ~ ("Return" to go to the home directory.)
+2.	pwd (узнать где находиться)
+3.	rm filename.txt (удаление файла)
+4.	cd - (returns to the previous directory)
+5.	mv file1 file2 (перемешать file1 в file2)
+6.	rm -rf folder (если хочешь удалить папку)
+7.	open . (terminal တည်နေရာ ကို finder ဖြင့်ဖွင့်
+8.	ls -la (Long format list (permissions, ownership, size and modification date) of all files:
+10.	cd .. (ရှေ့ directory ကိုပြန်သွားချင်သောအခါ)
+11.	mv test.txt original.txt (rename ပြုလုပ်လိုသော အခါသုံး)
+12.	mv original.txt SubDir/ (original.txt ဆိုသော file ကို SubDir ဆိုသော Directories သို့ပြောင်း)
+13.	ls *.txt (txt အမျိုးအစား ဖိုင်တွေ ရဲ့ list ကို သိချင်ရင် သုံး)
+14.	cat filename.txt (filename.txt ထဲမှာရှိတဲ့ စာတွေ terminal မှာ ပေါ်)
+15.	mv odlname.txt newnae.txt (remand file)
+16.	cd / (root directory)
+17.	ls -1 (List files one per line:)
+18.	which python (you can see that the path to the python that we're using is within 
+        our environments and project)
+
+19.	mkdir bs4 && cd bs4 (bs4 is a foldername)
+
+
+--------------- Работа с файлами (директориям, ссылками и т п)--------------------
+----------------------------------------------------------------------------------
+
+1. mkdir директория - создать директорию
+   cd !$ to that directory
+
+2. rmdir директория - удалить директорию
+3. cp файл1 файл2 - копировать файл1 в файл2
+4. rm файл1 - удалить файл1
+5. rm -rf директория - удалить директорию с ее содержимым (рекурсивно, ключ -r), не задавая лишних вопросов (-f)
+
+6. chmod права файл - установить права доступа к указанному файлу (директории)
+	chmod 660 hello.c
+	chmod +x hello.exe
+
+Оператор:
+	+ добавляет выбранные права доступа к уже имеющимся у каждого файла;
+	- удаляет эти права;
+	= присваивает только эти права каждому указанному файлу.
+	Буквы rwx выбирают новые права доступа для пользователя, заданного одной из букв:
+	r - чтение (просмотр каталога);
+	w - запись (возможность изменять содержимое каталога);
+	x - выполнение (возможность поиска по каталогу) (x);
+chown пользователь файл - установить владельцем этого файла указанного пользователя
+
+---------- virtualenv ---------------------
+-------------------------------------------
+
+1. mkdir environment
+2. cd !S - ခုလုပ်ထားတဲ့ folder ထဲသွား
+3. which python
+4. virtualenv project1-env
+5. source project1-env/bin/activate
+6. which python
+
+
+------------- Cкомпилировать программы ---------------
+------------------------------------------------------
+
+1.	python filename.py
+
+2.	nano (можно писать в nano)
+3.	g++ filename.cpp
+4.	./a.out
+5.	touch filename.py (создание нового файла)
+6.	open filename.py -a "Geany"
+7.	python filename.py; cat output.txt (если в файле есть output.txt) мы можем распечать в terminal 
+8.	python filename.py > output.txt (если в терминале не хочет размечать а в output.txt разпечать )
+9.	python3 -i filename.py
+
+
+
+------------------ for Djangon -------------------------
+--------------------------------------------------------
+
+python -m django --version --> (for know version of django)
+
+1. django-admin startproject mysite (mysite - name)
+		(or)
+   django-admin.py starproject mysite .
+
+2. python3 manage.py runserver
+3. python manage.py startapp music (create a neap)
+4. 	python manage.py migrate
+	python manage.py createsuperuser
+
+5. model file ကိုအသက်သွင်ချင်ရင် အောက်က command ကိုအရင်ရေး
+	python manage.py makemigrations
+	python manage.py sqlmigrate blog 0001
+	python manage.py migrate
+
+6. python manage.py shell ( для того чтобы проанализировать данные modles file
+
+
+7. python manage.py dumpdata courses --indent==2 (courses-- is a a--name)
+8. python manage.py dumpdata courses --indent=2 --
+   output = courses/fixtures/subjects.json (out ကိုကြိုက်တဲ့ dir ပေးလို့ရတယ်)
+   
+   python manage.py looddata subjects.json 
+   (все объекты subjects, которые были добавлены в фикстру
+
+
+
+python3 -m vena my_env (for create virtual environments)
+pip freeze > requirements.txt
+pip install -r requirements.txt
+
+
+COMPILE FOR WINDOW 
+
+g++ -o a.exe filename.cpp
+a.exe
+
+
+for c#
+-------
+mcs hello.cs
+mono hello.exe
+
+
+
+
+
+-------	Select Multiple lines, words, & columns -----
+-----------------------------------------------------
+
+1. cmd + / (for command)
+2. cmd + D (select multiple instances of a word)
+3. cmd + ctrl + G ( select all instances of a word)
+4. shift + left (select word)
+5. ctrl + shift + down (multiple line)
+6. Shift + Tab (Backspace Tab in Sublime)
+
+sudo ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
+
+subl .
+
+
+
+------------- GitHub ------------------------
+---------------------------------------------
+
+git config --global user.name "username"
+git config --global user.email "username@gmail.com"
+git config --list (this will list all of our configuration)
+git config --help
+
+
+git init (if you want to start tracking)
+ls -la
+rm -rf .git  (if we ever want to stop tracking our project with git)
+
+
+
+git status (before first commit)
+touch .gitignore(Add gitignore file)
+open .gitignore (.pyc)
+
+
+git add -A (Add files to staging area)
+git status
+git reset filename (to remove filename from staging area(cancel add comment)
+git reset (if you want to remove everything  from staging area)
+git status
+
+
+(Our first commit)
+git add -A (everything to staging area)
+git commit -m "initial commit"
+git status
+git log
+
+---- if you want to track existing remote project with git ---
+---------- (Cloning a remote repo) ---------
+git clone <url> <where to clone>
+git clone ../remote_repo.git . (remote_repo.git - this is a folder name and . mean all of file)
+
+
+
+
+--- (Viewing information about the remote repository) ----
+git remote -v (you can see it list the information to the repository here)
+git branch -a (it will list all of the branches in our repository)
+
+
+----- How to push files to the remote repository ------
+---------- (Pushing changes) -----------
+commit charges like we did previously
+git diff
+git status
+git add -A
+git commit -m "Modified multiply function"
+
+
+
+	
+### Then push:
+	git pull origin master (any changes that have been made since the last time that we pulled from that repository)
+	git push origin master (origin is our remote repository and then the master is the branch that we want to push)
+
+
+
+
+# COMMON WORKFLOW
+
+create a branch for desired feature <br/>
+common workflow that you're going to use to do this is to create a branch
+for your desired feature
+
+git branch calc-divide (calc-divide is a name of the branch)
+git branch
+git checkout calc-divide ( if you want to start working on the calc divide)
+
+git branch (it's going to list all of my local branches)
+
+
+## AFTER COMMIT PUSH BRANCH TO REMOTE
+git push -u origin calc-divide (origin whis is name of the our remote repository)
+git branch -a (this command was to see all of our branches)
+git pull <br/>
+git push
+
+## MERAGE A BRANCH
+git checkout master
+git pull origin master (now we want to pull all changes down
+git branch --merged
+git merge calc-divide
+git push origin master
+
+
+## DELETING A BRANCH
+git branch --merged <br/>
+git branch -d calc-divide (now we're ready to delete that branch since it's no longer necessary) <br/>
+git branch -a
+git push origin --delete calc-divide
+
+
+### FASTER EXAMPLE
+git branch subtract (subtract is the name of the branch)
+git checkout subtract (now you are working on the subtract branch)
+< and then you can changes what you want to changes>
+git status
+git add -A
+git commit -m "subtract"
+git push -u origin subtract
+git checkout master
+git pull origin master (we want to pull in all the changes that have been made)
+git merge subtract
+git push origin master
+
+
+################################### VERY GOOD ================================
+…or create a new repository on the command line
+echo "# f_p" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M master
+git remote add origin https://github.com/mgbo/f_p.git
+git push -u origin master
+
+
+
+============================= …or push an existing repository from the command line =========================
+git remote add origin https://github.com/mgbo/f_p.git
+git branch -M master
+git push -u origin master
+
+
+
+
+1. git clone https://github.com/mgbo/py_test.git
+   git config user.name "Ivanov Ivan"
+   git config user.email ivanov.ivan@phystech.edu
+
+2. git status - это нам покажет статус нашего проекта
+3. git add filname.py - дабаляемый файл только в статус перед добавлением (if a lot of file -- git add --all)
+4. git commit -m "Add filename.py" - чтобы довавились файлы нам необходимо сделать git commit -m
+5. git push
+6. git log (Команда git log возвращает историю нашего репозитория)
+   git log --author="author name" (только для истории указанного автора)
+7. git diff - После с помощью git diff посмотрим на текущие изменения
+
+
+7. git pull -- для того чтобы узнать already up-to-date 
+
+
+
+
+# КАК ВНЕСТИ ВКЛАД В ЧЕЙ-ТО РЕПОЗИТОРИЙ НА Github
+
+нам нужно создать форк репозиторя.
+fork означает ответвление
+
+1. git clone https://github.com/mgbo/py_test.git
+2. git status
+3. git add data/simplefile.py
+4. git commit -m "add something simplefile.py" - пока это commit находится в нашей локальной копи
+   git commit .
+5. git push - изменения отправляются в наш репозиторий на github
+6. нажимаем New Pull Request
+7. нажимаем creat pull reaquest
+8. нажимаем Creat pull request
+
+
+
+git checkout -- filename.py (to discard changes in working directory)
+git checkout -- . (to discard changes of all the file in working directory)
+git revert 97ed96f87d69cc5b0531daabf14963e6a097f49c -- (အကယ်၍ commit လုပ်ပြီးသာ file ကို  discard လုပ်ချင်ရင် git revert 97ed96f87d69cc5b0531daabf14963e6a097f49c(commit id) နဲ့ ပြုလုပ်ရမည်။)
+
+
+
+----- shell scripting ------
+
+1. touch hello.sh
+2. ./hello.sh
+3. chmod +x hello.sh
+4. ls -la
+5. ./hello.sh
+
+
+chord a+x ./hello.sh
+
+
+
+
+
+
+
+
+--- nginx ---
+brew install ngunx
+
+sudo nginx (for run)
+http://localhost:8080
+
+
+sudo nginx -s stop (for stop)
+
+
+#-------------- mysql -----------
+1. mysql -u root -p
+2. show databases;
+
+
+
+#--------- django ----------
+pip install virtualenv
+virtuallenv project_env
+
+source porject_env/bin/activate (for mac)
+deactivate
+
+which python
+which pip
+pip freeze --local > requirements.txt
+
+pip install -r requirements.txt
+
+sudo su - postgres
+
+
