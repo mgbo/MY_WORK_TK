@@ -11,7 +11,7 @@ def main():
 	with open('contacts.csv', 'r') as f, \
 		sqlite3.connect('contacts.db') as conn: # create database with name "contacts.db"
 
-		# contacts အမည်နှင့် data table ပြုလုပ်
+		# contacts အမည်နှင့် database ထဲတွင် data table တည်ဆောက်ခြင်း
 		conn.execute("""CREATE TABLE contacts (
 			last_name text,
 			first_name text,
@@ -20,7 +20,7 @@ def main():
 			) """)
 
 		# csv file မှ အချက်အလက်များကို database သို့ထည့်
-		conn.executemany("INSERT INTO contacts VALUES (?,?,?,?)", csv.reader(f))
+		# conn.executemany("INSERT INTO contacts VALUES (?,?,?,?)", csv.reader(f))
 
 if __name__ == "__main__":
 	main()
