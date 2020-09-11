@@ -97,7 +97,7 @@ def add_student():
     add_root.geometry('470x470+220+200')
     add_root.title('Student Management System')
     add_root.config(bg='blue')
-    add_root.iconbitmap(r'C:\Users\naylintun\Desktop\S_M_system\mana.ico')
+    # add_root.iconbitmap(r'C:\Users\naylintun\Desktop\S_M_system\mana.ico')
     add_root.resizable(False, False)
 
     #---------------------- add student label ----------------------
@@ -276,7 +276,7 @@ def search_student():
     search_root.geometry('470x540+220+200')
     search_root.title('Student Management System')
     search_root.config(bg='blue')
-    search_root.iconbitmap(r'C:\Users\naylintun\Desktop\S_M_system\mana.ico')
+    # search_root.iconbitmap(r'C:\Users\naylintun\Desktop\S_M_system\mana.ico')
     search_root.resizable(False, False)
 
     #---------------------- add student label ----------------------
@@ -415,7 +415,7 @@ def update_student():
     update_root.geometry('470x585+220+160')
     update_root.title('Student Management System')
     update_root.config(bg='blue')
-    update_root.iconbitmap(r'C:\Users\naylintun\Desktop\S_M_system\mana.ico')
+    # update_root.iconbitmap(r'C:\Users\naylintun\Desktop\S_M_system\mana.ico')
     update_root.resizable(False, False)
 
     #---------------------- add student label ----------------------
@@ -601,7 +601,7 @@ def Connect_db():
     db_root = Toplevel()
     db_root.grab_set()
     db_root.geometry('470x250+800+330')
-    db_root.iconbitmap(r'C:\Users\naylintun\Desktop\S_M_system\mana.ico')
+    # db_root.iconbitmap(r'C:\Users\naylintun\Desktop\S_M_system\mana.ico')
     db_root.resizable(False, False)
     db_root.config(bg='blue')
 
@@ -647,7 +647,7 @@ root.title('Student Management system')
 root.config(bg='gold2')
 root.geometry("1174x700+200+200")
 
-root.iconbitmap(r'C:\Users\naylintun\Desktop\S_M_system\mana.ico')
+# root.iconbitmap(r'C:\Users\naylintun\Desktop\S_M_system\mana.ico')
 root.resizable(False, False)
 
 ##################################### All Frame ( အဝင်နှင့် အထွက်) #########################################
