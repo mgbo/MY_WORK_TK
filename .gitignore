@@ -16,3 +16,10 @@ db.sqlite3-journal
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
+
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
