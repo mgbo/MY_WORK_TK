@@ -36,6 +36,7 @@ class ContactForm(tk.LabelFrame):
 	def __init__(self, master, **kwargs):
 		super().__init__(master, text='Contact', padx=10, pady=10, **kwargs)
 		self.frame = tk.Frame(self)
+		self.frame.pack(expand=1)
 
 		self.labels = [tk.Label(self.frame, text=name) for name in self.field]
 		self.entries = [tk.Entry(self.frame) for _ in self.field]
@@ -45,7 +46,15 @@ class ContactForm(tk.LabelFrame):
 			label.grid(row=i, column=0, sticky=tk.W)
 			entry.grid(row=i, column=1)
 
-		self.frame.pack(expand=1)
+	# 	self.entries = list(map(self.create_field, enumerate(self.field)))
+
+	# def create_field(self, field):
+	# 	position, text = field
+	# 	label = tk.Label(self.frame, text=text)
+	# 	entry = tk.Entry(self.frame, width=25)
+	# 	label.grid(row=position, column=0, pady=5)
+	# 	entry.grid(row=position, column=1, pady=5)
+	# 	return entry
 
 	# Contact Form တွင်ထည့်ရန်
 	def load_detail(self, contact): 
@@ -123,8 +132,28 @@ class ContactView(tk.Tk):
 	def add_contact(self, contact):
 		self.list.insert(contact)
 
+	# UserForm မှာရှိတဲ့ Button များ၏ လုပ်ဆောင်ချက်များကို Conrolller နှင့် ချိတ်ဆက်ထား 
 	def set_ctrl(self, ctrl):
-		self.btn_new.config(command=ctrl.create_contact)
+		# Add New Contacts ခလုတ် လုပ်ဆောင်ချက်အတွက် controller နှင့်ချိတ်ဆက်
+		self.btn_new.config(command=ctrl.create_contact) 
+		# listbox မှာရှိတဲ့ အချက်အလက် ကို Double Click လုပ်ပြီး အချက်အလက်အသေးစိတ်ကို UserForm တွင် ပြသရန်အတွက် Controller နှင့်ချိတ်ဆက်ထား
+		self.list.bind_doble_click(ctrl.select_contact)  
+		self.form.bind_save(ctrl.update_contact) # Save Button ခလုတ် လုပ်ဆောင်ချက်အတွက် controller နှင့်ချိတ်ဆက်
+		self.form.bind_delete(ctrl.delete_contact)
+
+	def load_details(self, contact):
+		self.form.load_detail(contact)
+
+	def get_details(self):
+		return self.form.get_details()
+
+	def update_contact(self, contact, index):
+		self.list.update(contact, index)
+
+	def remove_contact(self, index):
+		self.form.clear() # UserForm ထဲမှာရှိတဲ့ အချက်အလက်တွေကိုလဲ ဖျက်
+		self.list.delete(index) # ListBox ထဲမှာရှိတဲ့ အချက်အလက်တွေကိုလဲ ဖျက်
+
 
 
 
