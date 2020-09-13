@@ -129,8 +129,7 @@ class ContactView(tk.Tk):
 		self.form.pack()
 		self.btn_new.pack(padx=10, pady=25, ipadx=10)
 
-	def add_contact(self, contact):
-		self.list.insert(contact)
+
 
 	# UserForm မှာရှိတဲ့ Button များ၏ လုပ်ဆောင်ချက်များကို Conrolller နှင့် ချိတ်ဆက်ထား 
 	def set_ctrl(self, ctrl):
@@ -140,6 +139,9 @@ class ContactView(tk.Tk):
 		self.list.bind_doble_click(ctrl.select_contact)  
 		self.form.bind_save(ctrl.update_contact) # Save Button ခလုတ် လုပ်ဆောင်ချက်အတွက် controller နှင့်ချိတ်ဆက်
 		self.form.bind_delete(ctrl.delete_contact)
+
+	def add_contact(self, contact):
+		self.list.insert(contact)
 
 	def load_details(self, contact):
 		self.form.load_detail(contact)
