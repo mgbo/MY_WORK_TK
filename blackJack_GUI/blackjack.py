@@ -42,7 +42,7 @@ class GameState:
 				blackjack = True
 
 		table_state = {
-			'player_cards': self.player_hand.cards,
+			'player_cards': self.player_hand.cards, # list with Card object
 			'dealer_cards': self.dealer_hand.cards,
 			'has_winner': winner,
 			'blackjack': blackjack,
