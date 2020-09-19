@@ -16,13 +16,14 @@ class Player:
 		self.money -=amount
 	
 	def receive_card(self, card):
-		self.hand.card_card(card)
+		self.hand.add_card(card)
 	
 	def empty_hand(self):
 		self.hand.cards = []
 	
 	@property
 	def score(self):
+		# print ("Hand get score : ", self.hand.get_value())
 		return self.hand.get_value()
 
 	@property

@@ -13,6 +13,7 @@ class Hand:
 		self.value = 0
 		has_ace = False
 		for card in self.cards:
+			# print (card.value , card.suit, type(card.value))
 			if card.value.isnumeric():
 				self.value += int(card.value)
 			else:
@@ -24,6 +25,7 @@ class Hand:
 
 			if has_ace and self.value>21:
 				self.value -=10
+
 
 	def get_value(self):
 		self.calculate_value()
@@ -38,4 +40,20 @@ class Hand:
 			for card in self.cards:
 				print (card)
 
-			print ("Value :", self.get_value())
+			# print ("Value :", self.get_value())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

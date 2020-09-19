@@ -4,7 +4,7 @@ from tkinter import *
 from tkinter import Toplevel, messagebox, filedialog
 from tkinter.ttk import Treeview
 from tkinter import ttk
-
+import os
 # ------------- database libary --------------
 import pymysql
 import mysql.connector
@@ -14,6 +14,10 @@ import pandas
 from PIL import Image
 import time
 import random
+
+
+assets_folder = os.path.abspath(os.path.join(os.path.dirname(__file__)))
+print (assets_folder)
 
 colors = ['red', 'green', 'blue', 'yellow', 'pink', 'red2', 'gold2']
 
@@ -97,7 +101,8 @@ def add_student():
     add_root.geometry('470x470+220+200')
     add_root.title('Student Management System')
     add_root.config(bg='blue')
-    # add_root.iconbitmap(r'C:\Users\naylintun\Desktop\S_M_system\mana.ico')
+    add_root.iconbitmap(r'{}/mana.ico'.format(assets_folder))
+    # print(r'{}/mana.ico'.format(assets_folder))
     add_root.resizable(False, False)
 
     #---------------------- add student label ----------------------

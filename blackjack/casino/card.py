@@ -22,7 +22,8 @@ class Card:
 	
 	@classmethod
 	def get_back_file(cls):
-		cls.back = tk.PhotoImage(file=assets_folder + "/resized_hidden_2.png")
+		# cls.back = tk.PhotoImage(file=assets_folder + "/resized_hidden_2.png")
+		cls.back = tk.PhotoImage(file=assets_folder + "/card-b.png")
 		return cls.back
 	
 
