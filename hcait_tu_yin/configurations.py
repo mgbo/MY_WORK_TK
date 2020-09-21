@@ -23,6 +23,12 @@ START_PIECES_POSITION = {
 }
 
 
+SHORT_NAME = {
+    'R': 'Rook',  'N': 'Knight',  'B': 'Bishop',
+    'Q': 'Queen',  'K': 'King',  'P': 'Pawn'
+}
+
+
 
 
 
