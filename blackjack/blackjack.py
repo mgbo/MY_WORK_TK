@@ -3,6 +3,7 @@ import tkinter as tk
 from functools import partial
 from casino import Card, Deck, Player, Dealer, assets_folder
 from casino_sounds import SoundBoard
+import time
 
 class Gamestate:
 	def __init__(self):
@@ -461,9 +462,13 @@ class GameWindow(tk.Tk):
 		self.game_screen.setup_opening_animation()
 
 
-
 if __name__ == "__main__":
+	t1 = time.clock()
+	
 	app = GameWindow()
+
+	t2 = time.clock()
+	print ('Took {} seconds'.format(t2-t1))
 	app.mainloop()
 
 

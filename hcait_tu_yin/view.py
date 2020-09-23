@@ -110,14 +110,13 @@ class View:
 		self.bottom_frame.pack(fill="x", side="bottom")
 
 	#=================== စစ်တုရင်မှ အရုပ်များ ကို ရေးဆွဲရန် posisition(x,y) နှင့် သတ်ဆိုင်ရာ အရုပ်သတ်မှတ်ခြင်း နှင့် model data နှင့် ချိတ်ဆက်ခြင်း =======================
-
 	def start_new_game(self):
 		self.controller.reset_game_data()
-		self.controller.reset_to_initial_locations()
+		self.controller.reset_to_initial_locations() # controller မှတစ်ဆင့် model မှ data ကိုရယူရန်အတွက်
 		self.draw_all_pieces()
 
 	def draw_single_piece(self, position, piece):
-		x, y = self.controller.get_numeric_notation(position) # x, y ကို ကိန်းဂဏန်း ဖြင့် ရရှိရန်အတွက်
+		x, y = self.controller.get_numeric_notation(position) # x, y --> (0,1) ကို ကိန်းဂဏန်း ဖြင့် ရရှိရန်အတွက်
 
 		if piece:
 			filename = f"{assets_folder}/{piece.name.lower()}_{piece.color}.png"
@@ -128,18 +127,20 @@ class View:
 			# 	print ('images files -->', k,v)
 
 			x0, y0 = self.calculate_piece_coordinate(x, y) # နယ်ရုပ် ထားရမည့် တည်နေရာရရှိရန် အတွက်
-			self.canvas.create_image(x0, y0, image=self.images[
-									 filename], tags=("occupied"), anchor="c")
+			self.canvas.create_image(x0, y0, image=self.images[filename], tags=("occupied"), anchor="c")
 	
-	def calculate_piece_coordinate(self, row, col):
+	def calculate_piece_coordinate(self, row, col): # နယ်ရုပ်များကို စစ်တုရင်ခုံပေါ်တွင် ထားရှိရန်အတွက် pixel position ရရှိရန်အတွက်
 		x0 = (col * DIMENSION_OF_EACH_SQUARE) + int(DIMENSION_OF_EACH_SQUARE/2)
 		y0 = ((7-row) * DIMENSION_OF_EACH_SQUARE) + int (DIMENSION_OF_EACH_SQUARE/2)
+		# print ("pixel position of pieces -> ", x0, y0)
 		return (x0, y0)
 	
 	def draw_all_pieces(self):
 		self.canvas.delete("occupied")
 		for position, piece in self.controller.get_all_pieces_on_chess_board():
 			self.draw_single_piece(position, piece)
+
+
 
 def main(controller):
     root = tk.Tk()
