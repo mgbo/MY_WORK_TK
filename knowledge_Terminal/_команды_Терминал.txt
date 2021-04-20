@@ -49,8 +49,8 @@
 	x - выполнение (возможность поиска по каталогу) (x);
 chown пользователь файл - установить владельцем этого файла указанного пользователя
 
----------- virtualenv ---------------------
--------------------------------------------
+--------------------- virtualenv ---------------------
+------------------------------------------------------
 
 1. mkdir environment
 2. cd !S - ခုလုပ်ထားတဲ့ folder ထဲသွား
@@ -116,6 +116,14 @@ COMPILE FOR WINDOW
 
 g++ -o a.exe filename.cpp
 a.exe
+
+
+------------ for mac ------------
+g++ -o a.exe filename.cpp
+./a.exe
+
+g++ -std=c++11 filename.cpp
+./a.out
 
 
 for c#
@@ -316,7 +324,8 @@ git revert 97ed96f87d69cc5b0531daabf14963e6a097f49c -- (အကယ်၍ commit �
 
 
 
------ shell scripting ------
+------------------- shell scripting ---------------------
+---------------------------------------------------------
 
 1. touch hello.sh
 2. ./hello.sh
@@ -329,12 +338,21 @@ chord a+x ./hello.sh
 
 
 
+--------------- VIM ---------------------
+-----------------------------------------
+1.	First, Hit the ESE and :
+	:i	(to insert and write)
+	:q	(to quit (short for quit))
+	:q!	(to quit without saving - short for :quit!)
+	:wq	(to write and quit)
+	:x	(to write and quit(similar to :wq)
+	:help	(command -where you can find answer to all your questions)
+	:w [newfilename] (you can also save as an existing file 
 
 
 
-
-
---- nginx ---
+------------- nginx -------------------
+---------------------------------------
 brew install ngunx
 
 sudo nginx (for run)
@@ -345,12 +363,14 @@ sudo nginx -s stop (for stop)
 
 
 #-------------- mysql -----------
+---------------------------------
 1. mysql -u root -p
 2. show databases;
 
 
 
-#--------- django ----------
+#------------------------ django ---------------------------
+------------------------------------------------------------
 pip install virtualenv
 virtuallenv project_env
 
@@ -364,5 +384,10 @@ pip freeze --local > requirements.txt
 pip install -r requirements.txt
 
 sudo su - postgres
+
+
+
+PyQt5 - Converting .ui file to .py file
+pyuic5 -x demoServer.ui -o demoServer.py
 
 
