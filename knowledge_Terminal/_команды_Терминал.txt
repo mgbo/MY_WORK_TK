@@ -115,7 +115,7 @@ pip install -r requirements.txt
 COMPILE FOR WINDOW 
 
 g++ -o a.exe filename.cpp
-a.exe
+./a.exe
 
 
 ------------ for mac ------------
@@ -389,5 +389,26 @@ sudo su - postgres
 
 PyQt5 - Converting .ui file to .py file
 pyuic5 -x demoServer.ui -o demoServer.py
+
+
+----for RabbitMQ server -----
+brew services start rabbitmq
+brew services stop rabbitmq
+
+localhost:15672
+
+by default
+username - guest
+password - guest
+
+
+
+----------- vim --------
+vim filename.py
+press (ese)
+:wq
+
+:set number
+:set nonumber
 
 
