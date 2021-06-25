@@ -3,7 +3,7 @@ import os
 import pygame
 from casino import assets_folder
 
-print ('Hello, I am soundfolder!!')
+print('Hello, I am soundfolder!!')
 
 class SoundBoard:
     def __init__(self):
